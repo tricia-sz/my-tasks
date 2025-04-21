@@ -1,11 +1,10 @@
 "use client"
+import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import shape from "../../../public/shape2.svg";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { Session } from "next-auth";
-import { AiOutlineLogin } from "react-icons/ai";
+import { FaSpinner } from "react-icons/fa";
 import { RiLoginCircleLine } from "react-icons/ri";
+import shape from "../../../public/shape2.svg";
 export default function Header() {
 
   const { data: session, status } = useSession()
@@ -33,7 +32,7 @@ export default function Header() {
           <div className="flex justify-center items-center p-4 gap-4 mt-4">
             {
               status === "loading" ? (
-                <> <span>carregando</span> </>
+                <> <span><FaSpinner size={28} className="animate-spin" /></span> </>
 
               ) : session ? (
                 <button className=" bg-black  rounded-4xl px-6 py-2 text-white"
