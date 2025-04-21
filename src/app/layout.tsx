@@ -3,6 +3,7 @@ import { Play} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import { SessionProvider } from "next-auth/react";
 
 const play = Play({
   variable: "--font-geist-sans",
@@ -26,9 +27,11 @@ export default function RootLayout({
       <body
         className={`${play.variable} antialiased bg-pink-50`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <SessionProvider>
+          <Header />
+          {children}
+          <Footer />
+        </SessionProvider>
       </body>
     </html>
   );
