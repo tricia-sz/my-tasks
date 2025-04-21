@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Play} from "next/font/google";
 import "./globals.css";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
 
 const play = Play({
   variable: "--font-geist-sans",
@@ -22,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${play.variable} antialiased`}
+        className={`${play.variable} antialiased bg-pink-50`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
