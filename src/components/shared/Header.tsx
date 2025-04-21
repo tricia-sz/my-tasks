@@ -21,15 +21,15 @@ export default function Header() {
           <div className="flex justify-center mt-4">
           {
               session?.user && (
-                <div className="justify-center items-center">
-                  <Link href="/dashboard" className="bg-pink-700 rounded-4xl px-6 py-2 text-black font-medium items-center justify-center">
+                <div className="justify-center items-center mb-4">
+                  <Link href="/dashboard" className="bg-pink-300 rounded-4xl px-6 py-2 text-black font-medium items-center justify-center">
                     Meu Painel
                   </Link>
                 </div>
               )
             }
           </div>
-          <div className="flex justify-center items-center p-4 gap-4 mt-4">
+          <div className="flex justify-center items-center p-4 gap-4">
             {
               status === "loading" ? (
                 <> <span><FaSpinner size={28} className="animate-spin" /></span> </>
