@@ -6,9 +6,17 @@ import { redirect } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { FaShareAlt, FaTrash } from "react-icons/fa";
 import { MdOutlineAddTask } from "react-icons/md";
+import {db} from "../../../services/firebaseConnection"
+import {addDoc, collection} from "firebase/firestore"
 
-export default  function Dashboard(){
-  const { status } = useSession()
+interface HomeProprs {
+  user: {
+    email: string
+  }
+}
+
+export default  function Dashboard({user}: HomeProprs){
+  const { data, status } = useSession()
     if( status === "unauthenticated" ) {
      return  redirect("/")
     }
@@ -22,12 +30,27 @@ export default  function Dashboard(){
       
     }
 
-    function handleRegisterTask(event: FormEvent){
+    async function handleRegisterTask(event: FormEvent){
       event.preventDefault();
 
       if(input === "") return;
 
-      alert("TESTE")
+      try{
+        await addDoc(collection(db, "tarefas"), {
+          tarefa: input,
+          created: new Date(),
+          user: data?.user?.email,
+          public: publicTask
+
+        });
+
+        setInput("");
+        setPublicTask(false);
+
+      } catch(err) {
+        console.log(err);
+        
+      }
     }
 
   return (
