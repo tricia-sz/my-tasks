@@ -11,13 +11,13 @@ export default function Footer() {
         <div className="">
           <nav className="">
             <Link href={"/"} className="flex gap-2 justify-center items-center">
-              <h1 className="font-bold text-4xl text-pink-950">MyTasks</h1><span className="text-black text-7xl font-bold">+</span>
+              <h1 className="font-bold text-4xl ">MyTasks</h1><span className="text-pink-700 text-7xl font-bold">+</span>
             </Link>
           </nav>
           <Link href={`https://tricia-sz.netlify.app/`} target="blank" rel="external" className="">
-                  <span className="text-sm text-black bg-Inc-950  font-mono  w-full flex items-center justify-center tracking-wide hover:text-purple-500 cursor-pointer ">
+                  <span className="text-sm text-black bg-Inc-950  font-mono  w-full flex items-center justify-center tracking-wide hover:text-white cursor-pointer ">
                     Developed by Parícia Souza{" "}
-                    <span className="text-white px-2">
+                    <span className="text-black px-2 py-4">
                         <FaHeart size={18} color="" />
                     </span>{" "}
                     2025

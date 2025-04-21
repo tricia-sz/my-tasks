@@ -23,7 +23,7 @@ export default function Header() {
           {
               session?.user && (
                 <div className="justify-center items-center">
-                  <Link href="/dashboard" className="bg-pink-700 rounded-4xl px-6 py-2 text-black font-bold items-center justify-center">
+                  <Link href="/dashboard" className="bg-pink-700 rounded-4xl px-6 py-2 text-black font-medium items-center justify-center">
                     Meu Painel
                   </Link>
                 </div>
@@ -36,9 +36,9 @@ export default function Header() {
                 <> <span>carregando</span> </>
 
               ) : session ? (
-                <button className=" bg-black text-white rounded-4xl px-6 py-2"
+                <button className=" bg-black  rounded-4xl px-6 py-2 text-white"
                   onClick={() => signOut()}>
-                  Olá, {session.user?.name}
+                  Olá, <span className="text-pink-400 font- text-xl">{session.user?.name}</span>
                 </button>
               ) : (
                 <div className="justify-center items-center">

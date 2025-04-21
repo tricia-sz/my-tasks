@@ -23,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
-        className={`${play.variable} antialiased bg-pink-50`}
+        className={`${play.variable} antialiased bg-pink-50 text-black`}
       >
         <SessionProvider>
           <Header />
