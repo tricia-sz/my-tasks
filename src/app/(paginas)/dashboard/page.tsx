@@ -15,6 +15,8 @@ import {
   orderBy,
   where,
   onSnapshot,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 import Link from "next/link";
 
@@ -97,7 +99,19 @@ interface TaskProps {
       }
     }
   
-
+    async function handleShare(id: string) {
+      await navigator.clipboard.writeText(
+        `${process.env.NEXT_PUBLIC_URL}/task/${id}`
+      );
+  
+      alert("URL Copiada com sucesso!");
+    }
+  
+    async function handleDeleteTask(id: string) {
+      const docRef = doc(db, "tarefas", id);
+      await deleteDoc(docRef);
+    }
+    
   return (
     <Container>
       <div>
@@ -140,7 +154,7 @@ interface TaskProps {
                   {item.public && (
                     <div className="mb-2 justify-center">
                       <label className="bg-pink-400 px-3 rounded-full ">Público</label>
-                      <button className="">
+                      <button className="" onClick={() => handleShare(item.id)}>
                         <FaShareAlt size={22} className="text-gray-900" />
                       </button>
                     </div>
@@ -157,7 +171,7 @@ interface TaskProps {
 
                       )
                     }
-                    <button className="">
+                    <button className=""  onClick={() => handleDeleteTask(item.id)}>
                       <FaTrash size={24} className="text-pink-700" />
                     </button>
                   </div>
