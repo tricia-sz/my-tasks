@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${play.variable} antialiased bg-pink-50 text-black`}
+        className={`${play.variable} antialiased bg-pink-100 text-black`}
       >
         <SessionProvider>
           <Header />
