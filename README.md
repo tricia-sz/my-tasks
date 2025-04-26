@@ -1,7 +1,7 @@
 # ✅ My Tasks - TODO List ✅
 
 <div align="center">
-<img src="https://github.com/tricia-sz/trflix/blob/main/.gitassets/capa.png?raw=true" width="250" />
+<img src="https://github.com/tricia-sz/my-tasks/blob/main/.gitassets/capa.png?raw=true" width="250" />
 
  <div data-badges>
   <img src="https://img.shields.io/github/stars/portfolio-projetos-dev/kino?style=for-the-badge" alt="GitHub stars" />
